@@ -51,7 +51,6 @@ function NormalizeDefinition([string]$text, [bool]$removeFixFields) {
     $normalized = $text.Replace("`r`n", "`n").Replace("`r", "`n")
     if ($removeFixFields) {
         $normalized = [regex]::Replace($normalized, '(?m)^\s*master_collision_angle\s*:\s*180(?:\.0+)?\s*\n', '')
-        $normalized = [regex]::Replace($normalized, '(?m)^\s*collision\s*:\s*"[^"]*"\s*\n', '')
     }
     $lines = $normalized.Split("`n") | ForEach-Object { $_.TrimEnd() }
     return ($lines -join "`n").TrimEnd()
@@ -67,7 +66,7 @@ try {
     Require (Exists "manifest.sii") "Missing manifest.sii"
     if (Exists "manifest.sii") {
         $manifest = ReadText "manifest.sii"
-        Require ($manifest -match 'package_version\s*:\s*"1\.1"') "Manifest package version is not 1.1"
+        Require ($manifest -match 'package_version\s*:\s*"1\.2"') "Manifest package version is not 1.2"
         Require ($manifest -match 'compatible_versions\[\]\s*:\s*"1\.59\.\*"') "Manifest does not declare ETS2 1.59.*"
     }
     Require (Exists "description.txt") "Missing description.txt"
@@ -75,7 +74,7 @@ try {
         $description = ReadText "description.txt"
         Require ($description -match '(?is)higher\s+priority.*bus') "Description omits higher-priority installation guidance"
         Require ($description -match '(?is)fresh\s+passenger\s+job') "Description omits fresh passenger-job guidance"
-        Require ($description -match '(?is)removes?\s+the\s+invisible\s+trailer.*world\s+collision') "Description omits world-collision removal"
+        Require ($description -match '(?is)restores?\s+the\s+valid\s+invisible\s+trailer\s+collision') "Description omits collision-restoration guidance"
         Require ($description -match '(?is)Kim\s+Long.*only\s+if.*passenger.*crsthn\.t_passag') "Description omits conditional Kim Long coverage"
     }
 
@@ -89,8 +88,8 @@ try {
         $candidate = ReadText $asset
         Require ($candidate -match [regex]::Escape("accessory_chassis_data : $($definitions[$asset])")) "Wrong chassis unit in $asset"
         Require (([regex]::Matches($candidate, '(?m)^\s*master_collision_angle\s*:\s*180(?:\.0+)?\s*$')).Count -eq 1) "$asset must contain exactly one master_collision_angle: 180"
-        Require (([regex]::Matches($candidate, '(?m)^\s*collision\s*:\s*""\s*$')).Count -eq 1) "$asset must disable the invisible trailer world collision"
-        Require ($candidate -notmatch '(?i)trailer_invisivel\.pmc') "$asset still references the invisible trailer collision PMC"
+        Require (([regex]::Matches($candidate, '(?m)^\s*collision\s*:\s*"/vehicle/trailer_owned/crs_trailer_inv/trailer_invisivel\.pmc"\s*$')).Count -eq 1) "$asset must use the valid invisible trailer collision PMC"
+        Require ($candidate -notmatch '(?m)^\s*collision\s*:\s*""\s*$') "$asset contains an invalid blank collision path"
         Require (([regex]::Matches($candidate, '(?m)^\s*residual_travel\[\]\s*:')).Count -eq 2) "$asset no longer has two suspension travel entries"
         Require (([regex]::Matches($candidate, '(?m)^\s*steerable_axle\[\]\s*:')).Count -eq 2) "$asset no longer has two steerable axle entries"
         Require ($candidate -match '(?m)^\s*trailer_mass\s*:\s*100\s*$') "$asset changed trailer mass"
@@ -102,7 +101,7 @@ try {
         Require (Test-Path -LiteralPath $baselineFile -PathType Leaf) "Missing baseline definition: $baselineFile"
         if (Test-Path -LiteralPath $baselineFile -PathType Leaf) {
             $baselineText = [IO.File]::ReadAllText($baselineFile)
-            Require ((NormalizeDefinition $candidate $true) -ceq (NormalizeDefinition $baselineText $true)) "$asset changed fields beyond collision and master_collision_angle"
+            Require ((NormalizeDefinition $candidate $true) -ceq (NormalizeDefinition $baselineText $false)) "$asset changed fields beyond master_collision_angle"
         }
     }
 
@@ -113,7 +112,7 @@ try {
         $failures | ForEach-Object { Write-Host "FAIL: $_" -ForegroundColor Red }
         exit 1
     }
-    Write-Host "PASS: passenger trailer fix preserves both baselines and changes only collision plus master_collision_angle."
+    Write-Host "PASS: passenger trailer fix preserves both baselines, uses a valid collision path, and changes only master_collision_angle."
 } finally {
     if ($null -ne $zip) { $zip.Dispose() }
 }

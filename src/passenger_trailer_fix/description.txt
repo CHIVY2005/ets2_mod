@@ -1,4 +1,4 @@
 Load this fix with higher priority than the supported bus mods.
 After enabling it, start a fresh passenger job so the invisible trailer is spawned with the corrected chassis.
-Version 1.1 removes the invisible trailer world collision to prevent repeated impact sounds.
+Version 1.2 restores the valid invisible trailer collision path; blank collision paths can prevent ETS2 from loading.
 Kim Long is covered only if its locked vehicle mod uses the passenger or crsthn.t_passag trailer family.
