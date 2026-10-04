@@ -1,0 +1,12 @@
+# Local inspection/build dependencies that must not be committed
+_vehicle_catalog/
+_grandbird_inspect/
+conversion_tools_*/
+*.zip
+
+# Full third-party vehicle mods
+KIA GRANBIRD*.scs
+
+# Editor and OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,3 @@
+Load this fix with higher priority than the supported bus mods.
+After enabling it, start a fresh passenger job so the invisible trailer is spawned with the corrected chassis.
+Kim Long is covered only if its locked vehicle mod uses the passenger or crsthn.t_passag trailer family.

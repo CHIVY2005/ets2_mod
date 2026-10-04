@@ -1,0 +1,28 @@
+SiiNunit
+{
+
+ui::text_template : txt.optical_hud.speed {
+	name: "speed"
+	text: "<align hstyle=right vstyle=top><color value=FFFFFFFF><font face=/font/lcd_number_modern.font xscale=1 yscale=1>%0</font></align><ret><offset vshift=37><align hstyle=right vstyle=bottom><color value=FFFFFFFF><font face=/font/big_bold.font xscale=1 yscale=1> %1</font></align>"
+}
+
+ui::text_template : txt.optical_hud.cruise_speed {
+	name: "cruise_speed"
+	text: "<img src=/material/ui/dashboard/scania_2016/dashboard_computer.mat width=25px height=25px left=p216 right=p256 top=p87 bottom=p121><align hstyle=right vstyle=bottom><color value=FFFFFFFF><font face=/font/lcd_number_modern.font xscale=0.661 yscale=0.661>%0</font></align>"
+}
+ui::text_template : txt.optical_hud.speed_limit {
+	name: "road speed limit"
+	text: "<img src=/material/ui/adviser/limit_sign.mat xscale=stretch yscale=stretch><ret><align hstyle=center vstyle=center><font face=/font/big_bold.font xscale=2.024 yscale=2.024><color value=FF000000>%0</font></align>"
+}
+
+ui::text_template : txt.optical_hud.remain {
+	name: "remain"
+	text: "<img src=/material/ui/adviser/truck.mat width=25px height=25px left=p0 right=p54 top=p0 bottom=p39><align hstyle=right vstyle=bottom><color value=FFFFFFFF><font face=/font/lcd_number_modern.font xscale=0.517 yscale=0.517>%0</font></align>"
+}
+
+ui::text_template : txt.optical_hud.rest {
+	name: "rest"
+	text: "<img src=/material/ui/adviser/fatigue.mat width=25px height=25px left=p5 right=p26 top=p0 bottom=p16> <align hstyle=right vstyle=bottom><color value=FFFFFFFF><font face=/font/lcd_number_modern.font xscale=0.517 yscale=0.517>%0</font></align>"
+}
+
+}

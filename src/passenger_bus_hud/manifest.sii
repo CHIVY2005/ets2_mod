@@ -1,0 +1,14 @@
+SiiNunit
+{
+mod_package : .package_name {
+    package_version: "1.1"
+    display_name: "Passenger Bus Optical HUD - GPS + Speed"
+    author: "Xuan25 / Passenger-bus compatibility addon"
+    category[]: "ui"
+    category[]: "tuning_parts"
+    icon: "cover.jpg"
+    description_file: "description.txt"
+    compatible_versions[]: "1.59.*"
+    mp_mod_optional: true
+}
+}

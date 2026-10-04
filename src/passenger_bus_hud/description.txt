@@ -1,0 +1,17 @@
+Windshield Optical HUD for supported passenger buses in ETS2 1.59.
+
+Supported vehicles:
+- Kia Grandbird (granbird.23)
+- Kim Long 99 (kimlong.99)
+- Thaco Mobihome 2024 (thaco.mbh.23)
+- Thaco Mobihome 2025 (thaco.mbh.25)
+- Thaco Mobihome 2015-2016 (man.tgx.sample)
+
+Features:
+- Navigation map, current speed and speed limit
+- Normal, Large and Extra Large sizes
+- Left-shifted projection and 1024 x 1024 UI rendering
+
+Load this addon above the supported bus mods. Open the vehicle configurator, select the left-windshield accessory point, and install one Passenger HUD size.
+
+Original Optical HUD project by Xuan25. This compatibility addon contains no vehicle mod.

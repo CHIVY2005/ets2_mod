@@ -1,0 +1,145 @@
+SiiNunit
+{
+ui::window : _nameless.wnd {
+ window_handler: null
+ clip_children: true
+ keep_aspect: none
+ user_string_data: ""
+ first_direction_focus_id: 0
+ fitting: false
+ my_children[]: _nameless._.map
+ my_children[]: _nameless._.overlay
+ coords_l: 0
+ coords_r: 512
+ coords_t: 512
+ coords_b: 0
+ id: 0
+ layer: 0
+ tab: -1
+ pointer: -1
+ my_parent: null
+}
+
+ui::text : _nameless._.map {
+ text: "<img src=/material/ui/dashboard/bare_map.mat xscale=stretch yscale=stretch left=0.267 right=0.733 bottom=0.4 top=0.75>"
+ coords_l: 112
+ coords_r: 512
+ coords_t: 320
+ coords_b: 0
+ id: 0
+ layer: -1
+ tab: -1
+ pointer: -1
+ my_parent: _nameless.wnd
+}
+
+ui::group : _nameless._.overlay {
+ fitting: false
+ my_children[]: _nameless._.speed
+ my_children[]: _nameless._.cruise
+ my_children[]: _nameless._.speed_limit
+ my_children[]: _nameless._.rest
+ my_children[]: _nameless._.remains
+ coords_l: 0
+ coords_r: 512
+ coords_t: 512
+ coords_b: 0
+ id: 950
+ layer: -1
+ tab: -1
+ pointer: -1
+ my_parent: _nameless.wnd
+}
+
+ui::text_common : _nameless._.speed {
+ look_template: txt.optical_hud.speed
+ text: ""
+ coords_l: 5
+ coords_r: 107
+ coords_t: 70
+ coords_b: 10
+ id: 1020
+ layer: 3
+ tab: -1
+ pointer: -1
+ my_parent: _nameless._.overlay
+}
+
+ui::group : _nameless._.cruise {
+ fitting: false
+ my_children[]: _nameless._.cruise_speed
+ coords_l: 0
+ coords_r: 0
+ coords_t: 0
+ coords_b: 0
+ # https://modding.scssoft.com/wiki/Documentation/Engine/Truck_Interior_Animations_and_IDs
+ id: 1240
+ layer: 0
+ tab: -1
+ pointer: -1
+ my_parent: _nameless._.overlay
+}
+
+ui::text_common : _nameless._.cruise_speed {
+ look_template: txt.optical_hud.cruise_speed
+ text: ""
+ coords_l: 5
+ coords_r: 107
+ coords_t: 105
+ coords_b: 80
+ # https://modding.scssoft.com/wiki/Documentation/Engine/Truck_Interior_Animations_and_IDs
+ id: 1100
+ layer: 3
+ tab: -1
+ pointer: -1
+ my_parent: _nameless._.cruise
+}
+
+ui::link_text : _nameless._.speed_limit {
+ link_pointer: -1
+ value: 100
+ look_template: txt.optical_hud.speed_limit
+ text: ""
+ coords_l: 43
+ coords_r: 107
+ coords_t: 175
+ coords_b: 115
+ # https://modding.scssoft.com/wiki/Documentation/Engine/Truck_Interior_Animations_and_IDs
+ id: 1610
+ layer: 0
+ tab: -1
+ pointer: -1
+ my_parent: _nameless._.overlay
+}
+
+ui::text_common : _nameless._.rest {
+ look_template: txt.optical_hud.rest
+ text: ""
+ coords_l: 5
+ coords_r: 107
+ coords_t: 290
+ coords_b: 270
+ # https://modding.scssoft.com/wiki/Documentation/Engine/Truck_Interior_Animations_and_IDs
+ id: 1540
+ layer: 3
+ tab: -1
+ pointer: -1
+ my_parent: _nameless._.overlay
+}
+
+ui::text_common : _nameless._.remains {
+ look_template: txt.optical_hud.remain
+ text: ""
+ coords_l: 5
+ coords_r: 107
+ coords_t: 310
+ coords_b: 290
+ # https://modding.scssoft.com/wiki/Documentation/Engine/Truck_Interior_Animations_and_IDs
+ id: 1530
+ layer: 3
+ tab: -1
+ pointer: -1
+ my_parent: _nameless._.overlay
+}
+
+}
