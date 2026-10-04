@@ -76,9 +76,9 @@ try {
         Require ($ui -match '/material/ui/dashboard/bare_map\.mat') "HUD UI is missing GPS map data"
     }
     Require (Exists "ui/template/dashboard_text.optical_hud.sii") "Missing HUD text template"
-    Require (Exists "vehicle/truck/share/optical_hud.tobj") "Missing render texture descriptor"
-    Require (Exists "vehicle/truck/share/optical_hud.dds") "Missing render texture"
-    Require (Exists "automat/a5/a5ae7b4d9051a340.mat") "Missing converted HUD material"
+    Require (Exists "vehicle/truck/passenger_hud/share/hud_ui.tobj") "Missing render texture descriptor"
+    Require (Exists "vehicle/truck/passenger_hud/share/hud_ui.dds") "Missing render texture"
+    Require (Exists "automat/4d/4d3a1800ca989ca9.mat") "Missing converted HUD material"
 
     if ($failures.Count -gt 0) {
         $failures | ForEach-Object { Write-Host "FAIL: $_" -ForegroundColor Red }

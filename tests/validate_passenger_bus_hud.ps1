@@ -45,7 +45,7 @@ try {
     Require (Exists "manifest.sii") "Missing manifest.sii"
     if (Exists "manifest.sii") {
         $manifest = ReadText "manifest.sii"
-        Require ($manifest -match 'package_version\s*:\s*"1\.3"') "Manifest package version is not 1.3"
+        Require ($manifest -match 'package_version\s*:\s*"1\.4"') "Manifest package version is not 1.4"
         Require ($manifest -match 'compatible_versions\[\]\s*:\s*"1\.59\.\*"') "Manifest does not declare ETS2 1.59.*"
     }
 
@@ -84,8 +84,29 @@ try {
             Require ($text -match 'ui_drawable_texture_path\s*:\s*"/vehicle/truck/passenger_hud/share/hud_ui\.tobj"') "$defPath uses a non-unique drawable texture"
             Require ($text -match 'ui_drawable_size\s*:\s*\(1024,\s*1024\)') "$defPath drawable is not 1024 x 1024"
         }
+
+        $dashboardPath = "def/vehicle/truck/$truck/accessory/set_lglass/dashboard_gps.sii"
+        Require (Exists $dashboardPath) "Missing dashboard GPS definition: $dashboardPath"
+        if (Exists $dashboardPath) {
+            $dashboard = ReadText $dashboardPath
+            $expectedUnit = "dash_gps.$truck.set_lglass"
+            $unitMatch = [regex]::Match($dashboard, 'accessory_addon_int_ui_data\s*:\s*([^\s\r\n]+)')
+            Require $unitMatch.Success "Missing dashboard GPS unit in $dashboardPath"
+            if ($unitMatch.Success) {
+                Require ($unitMatch.Groups[1].Value -ceq $expectedUnit) "Wrong unit in ${dashboardPath}: $($unitMatch.Groups[1].Value)"
+                $units.Add($unitMatch.Groups[1].Value)
+            }
+            $model = "/vehicle/truck/passenger_hud/$family/dashboard_gps.pmd"
+            Require ($dashboard -match [regex]::Escape("interior_model: `"$model`"")) "$dashboardPath does not use family dashboard model $model"
+            Require (Exists $model) "$dashboardPath references missing PMD: $model"
+            Require (Exists ([IO.Path]::ChangeExtension($model, '.pmg').Replace('\', '/'))) "$dashboardPath references a model without PMG"
+            Require ($dashboard -match 'name\s*:\s*"Dashboard GPS - Map \+ Speed"') "$dashboardPath has the wrong garage label"
+            Require ($dashboard -match 'ui_path\s*:\s*"/ui/dashboard/optical_hud\.sii"') "$dashboardPath uses the wrong native GPS UI"
+            Require ($dashboard -match 'ui_drawable_texture_path\s*:\s*"/vehicle/truck/passenger_hud/share/hud_ui\.tobj"') "$dashboardPath uses the wrong drawable texture"
+            Require ($dashboard -match 'ui_drawable_size\s*:\s*\(1024,\s*1024\)') "$dashboardPath drawable is not 1024 x 1024"
+        }
     }
-    Require (($units | Select-Object -Unique).Count -eq 15) "Accessory unit names are not 15 unique values"
+    Require (($units | Select-Object -Unique).Count -eq 20) "Accessory unit names are not 20 unique values"
 
     $actualTruckIds = $entries | Where-Object { $_ -match '^def/vehicle/truck/([^/]+)/' } | ForEach-Object { [regex]::Match($_, '^def/vehicle/truck/([^/]+)/').Groups[1].Value } | Sort-Object -Unique
     Require (($actualTruckIds -join '|') -ceq (($truckFamilies.Keys | Sort-Object) -join '|')) "Package truck IDs differ from the approved five: $($actualTruckIds -join ', ')"
@@ -111,7 +132,7 @@ try {
         $failures | ForEach-Object { Write-Host "FAIL: $_" -ForegroundColor Red }
         exit 1
     }
-    Write-Host "PASS: passenger-bus HUD package supports five buses, 15 unique accessories, three model families, and ETS2 1.59."
+    Write-Host "PASS: passenger-bus HUD package supports five buses, 20 unique accessories including dashboard GPS, three model families, and ETS2 1.59."
 } finally {
     if ($null -ne $zip) { $zip.Dispose() }
 }

@@ -1,0 +1,144 @@
+Header {
+    FormatVersion: 5
+    Source: "Blender 3.6.14 (hash: e480a2c4465b), SCS Blender Tools: 2.4.1909305e"
+    Type: "Model"
+    Name: "dashboard_gps"
+}
+Global {
+    VertexCount: 16
+    TriangleCount: 23
+    MaterialCount: 1
+    PieceCount: 1
+    PartCount: 1
+    BoneCount: 0
+    LocatorCount: 0
+    Skeleton: "optical_hud.pis"
+    PieceSkinCount: 0
+}
+Material {
+    Index: 0
+    Alias: "mat_0000.002"
+    Effect: "eut2.dif.lum.add"
+}
+Piece {
+    Index: 0
+    Material: 0
+    VertexCount: 16
+    TriangleCount: 23
+    StreamCount: 4
+    Stream {
+        Format: FLOAT3
+        Tag: "_POSITION"
+        0    ( &408c5530  &c075aea2  &c0a35011 )
+        1    ( &406d3de1  &c051d0c2  &c0ae6d75 )
+        2    ( &406ce858  &c076ae44  &c0ad1dac )
+        3    ( &4069073a  &c07993d4  &c0ade11f )
+        4    ( &405ca5ad  &c04f62ce  &c0b2403b )
+        5    ( &405c431c  &c079de69  &c0b0bd48 )
+        6    ( &4069aa08  &c07a43d6  &c0adb5e2 )
+        7    ( &408dec33  &c0791eae  &c0a277e5 )
+        8    ( &408c7ff4  &c050d11f  &c0a49fda )
+        9    ( &406a0fdc  &c04e60b5  &c0af45a0 )
+        10   ( &408e1f1c  &c04d3b8c  &c0a407a3 )
+        11   ( &405b9d0b  &c07a95ed  &c0b0dbb8 )
+        12   ( &406969cc  &c04f1839  &c0af6412 )
+        13   ( &405c02df  &c04eb2cb  &c0b26b76 )
+        14   ( &405c3ff8  &c0345db7  &c0b35b4f )
+        15   ( &408e3da9  &c032e678  &c0a4f77c )
+    }
+    Stream {
+        Format: FLOAT3
+        Tag: "_NORMAL"
+        0    ( &bed18755  &3d8c3185  &3f68ec69 )
+        1    ( &bed18755  &3d8c3185  &3f68ec69 )
+        2    ( &bed18755  &3d8c3185  &3f68ec69 )
+        3    ( &bed18755  &3d8c3185  &3f68ec69 )
+        4    ( &bed18755  &3d8c3185  &3f68ec69 )
+        5    ( &bed18755  &3d8c3185  &3f68ec69 )
+        6    ( &bed18755  &3d8c3185  &3f68ec69 )
+        7    ( &bed18755  &3d8c3185  &3f68ec69 )
+        8    ( &bed18755  &3d8c3185  &3f68ec69 )
+        9    ( &bed18755  &3d8c3185  &3f68ec69 )
+        10   ( &bed18755  &3d8c3185  &3f68ec69 )
+        11   ( &bed18755  &3d8c3185  &3f68ec69 )
+        12   ( &bed18755  &3d8c3185  &3f68ec69 )
+        13   ( &bed18755  &3d8c3185  &3f68ec69 )
+        14   ( &bed18755  &3d8c318d  &3f68ec69 )
+        15   ( &bed18755  &3d8c318d  &3f68ec69 )
+    }
+    Stream {
+        Format: FLOAT2
+        Tag: "_UV0"
+        AliasCount: 1
+        Aliases: "_TEXCOORD0"
+        0    ( &3f732d4e  &3d4d2b60 )
+        1    ( &3e899fac  &3f133239 )
+        2    ( &3e899fb0  &3d4d2b40 )
+        3    ( &3e55d1e0  &3c257280 )
+        4    ( &3c257200  &3f1d6f24 )
+        5    ( &3c257200  &3c257280 )
+        6    ( &3e600ecc  &38d1c000 )
+        7    ( &3f7ff972  &38d20000 )
+        8    ( &3f732d4d  &3f13323a )
+        9    ( &3e600ed0  &3f1ffe5e )
+        10   ( &3f7ff972  &3f1ffe5d )
+        11   ( &38d1c000  &38d20000 )
+        12   ( &3e55d1e4  &3f1d6f24 )
+        13   ( &38d1c000  &3f1ffe5f )
+        14   ( &38d1c000  &3f7ff974 )
+        15   ( &3f7ff972  &3f7ff972 )
+    }
+    Stream {
+        Format: FLOAT4
+        Tag: "_RGBA"
+        0    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3eccd0a8 )
+        1    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3dcccf0e )
+        2    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3eccd0a8 )
+        3    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3eccd0a8 )
+        4    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3eccd0a8 )
+        5    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3eccd0a8 )
+        6    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+        7    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+        8    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3dcccf0e )
+        9    ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+        10   ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+        11   ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+        12   ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &3eccd0a8 )
+        13   ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+        14   ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+        15   ( &3f7ffd54  &3f7ffd54  &3f7ffd54  &00000000 )
+    }
+    Triangles {
+        0    ( 2     1     0     )
+        1    ( 5     4     3     )
+        2    ( 7     6     0     )
+        3    ( 1     9     8     )
+        4    ( 10    0     8     )
+        5    ( 5     11    4     )
+        6    ( 4     13    12    )
+        7    ( 3     6     5     )
+        8    ( 12    9     3     )
+        9    ( 9     13    14    )
+        10   ( 7     0     10    )
+        11   ( 6     9     2     )
+        12   ( 2     9     1     )
+        13   ( 1     8     0     )
+        14   ( 4     12    3     )
+        15   ( 6     2     0     )
+        16   ( 9     10    8     )
+        17   ( 11    13    4     )
+        18   ( 13    9     12    )
+        19   ( 6     11    5     )
+        20   ( 9     6     3     )
+        21   ( 15    10    9     )
+        22   ( 9     14    15    )
+    }
+}
+Part {
+    Name: "defaultpart"
+    PieceCount: 1
+    LocatorCount: 0
+    Pieces: 0
+    Locators:
+}
+

@@ -35,7 +35,7 @@ function Normalize-Pim([string]$text) {
     return $normalized.Substring(0, $position.Index) + $masked + $normalized.Substring($position.Index + $position.Length)
 }
 
-$pimFiles = @(Get-ChildItem -LiteralPath $SourceRoot -Recurse -File -Filter '*.pim')
+$pimFiles = @(Get-ChildItem -LiteralPath $SourceRoot -Recurse -File -Filter '*.pim' | Where-Object { $_.Name -match '^optical_hud(?:_large|_extra_large)?\.pim$' })
 if ($pimFiles.Count -ne 9) { $failures.Add("Expected 9 PIM sources, found $($pimFiles.Count)") }
 
 foreach ($candidateFile in $pimFiles) {
@@ -83,7 +83,7 @@ try {
     }
 
     $manifest = Read-ZipText $zip 'manifest.sii'
-    if ($manifest -notmatch 'package_version:\s*"1\.3"') { $failures.Add('HUD package version is not 1.3') }
+    if ($manifest -notmatch 'package_version:\s*"1\.4"') { $failures.Add('HUD package version is not 1.4') }
 
     $materials = @($zip.Entries | Where-Object { $_.FullName -match '^automat/.+\.mat$' })
     if ($materials.Count -ne 1) { $failures.Add("Expected one HUD material, found $($materials.Count)") }
@@ -95,9 +95,10 @@ try {
 
     $candidateNames = @($zip.Entries | Where-Object Name | ForEach-Object FullName | Sort-Object)
     $baselineNames = @($baselineZip.Entries | Where-Object Name | ForEach-Object FullName | Sort-Object)
-    if (Compare-Object $candidateNames $baselineNames) { $failures.Add('Package entry set changed') }
+    $missingBaselineEntries = @($baselineNames | Where-Object { $_ -notin $candidateNames })
+    if ($missingBaselineEntries.Count -gt 0) { $failures.Add("Existing package entries were removed: $($missingBaselineEntries -join ', ')") }
 
-    $pmgs = @($zip.Entries | Where-Object { $_.FullName -match '\.pmg$' })
+    $pmgs = @($zip.Entries | Where-Object { $_.FullName -match '/optical_hud(?:_large|_extra_large)?\.pmg$' })
     if ($pmgs.Count -ne 9) { $failures.Add("Expected 9 compiled PMG models, found $($pmgs.Count)") }
     foreach ($pmg in $pmgs) {
         $old = $baselineZip.GetEntry($pmg.FullName)

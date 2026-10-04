@@ -10,9 +10,10 @@ Supported vehicles:
 Features:
 - Navigation map, current speed and speed limit
 - Normal, Large and Extra Large sizes
+- Native Dashboard GPS screen available as a separate garage choice
 - Left-shifted projection and 1024 x 1024 UI rendering
 - Transparent additive rendering, with the HUD surface moved slightly toward the cabin to stay ahead of windshield rain
 
-Load this addon above the supported bus mods. Open the vehicle configurator, select the left-windshield accessory point, and install one Passenger HUD size.
+Load this addon above the supported bus mods. Open the vehicle configurator, select the left-windshield accessory point, and install either one Passenger HUD size or the Dashboard GPS screen.
 
 Original Optical HUD project by Xuan25. This compatibility addon contains no vehicle mod.
