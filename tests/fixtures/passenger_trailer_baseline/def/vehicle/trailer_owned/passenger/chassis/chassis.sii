@@ -1,6 +1,6 @@
 SiiNunit
 {
-accessory_chassis_data : chs.crsthn.t_passag.chassis
+accessory_chassis_data : chs.passenger.chassis
 {
 	name: "passenger"
 	price: 1
@@ -8,12 +8,11 @@ accessory_chassis_data : chs.crsthn.t_passag.chassis
 	icon: "acc_crsthn"
 
 	model: "/vehicle/trailer_owned/crs_trailer_inv/trailer_invisivel.pmd"
-	collision: ""
-	master_collision_angle: 180
+	collision: "/vehicle/trailer_owned/crs_trailer_inv/trailer_invisivel.pmc"
 	variant: default
 	look: default
 
-	trailer_brace_model: ""
+        trailer_brace_model: ""
 	trailer_brace_anim: ""
 
 	trailer_brace_up_sound: ""

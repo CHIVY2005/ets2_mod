@@ -8,7 +8,7 @@ accessory_chassis_data : chs.passenger.chassis
 	icon: "acc_crsthn"
 
 	model: "/vehicle/trailer_owned/crs_trailer_inv/trailer_invisivel.pmd"
-	collision: "/vehicle/trailer_owned/crs_trailer_inv/trailer_invisivel.pmc"
+	collision: ""
 	master_collision_angle: 180
 	variant: default
 	look: default
