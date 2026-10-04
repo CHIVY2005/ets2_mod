@@ -20,7 +20,7 @@ Look {
     Name: "default"
     Material {
         Alias: "mat_0000.002"
-        Effect: "eut2.dif.lum.add"
+        Effect: "eut2.dif.lum.a"
         Flags: 0
         AttributeCount: 6
         TextureCount: 1

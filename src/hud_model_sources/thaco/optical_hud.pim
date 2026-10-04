@@ -18,7 +18,7 @@ Global {
 Material {
     Index: 0
     Alias: "mat_0000.002"
-    Effect: "eut2.dif.lum.add"
+    Effect: "eut2.dif.lum.a"
 }
 Piece {
     Index: 0

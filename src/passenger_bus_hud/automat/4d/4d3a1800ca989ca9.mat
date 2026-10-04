@@ -1,4 +1,4 @@
-effect : "eut2.dif.lum.add.rfx" {
+effect : "eut2.dif.lum.a.rfx" {
 	additional_ambient : 0.000000
 	diffuse : { 1.000000 , 1.000000 , 1.000000 }
 	luminance_night : 10.000000
