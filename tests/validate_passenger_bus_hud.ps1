@@ -45,7 +45,7 @@ try {
     Require (Exists "manifest.sii") "Missing manifest.sii"
     if (Exists "manifest.sii") {
         $manifest = ReadText "manifest.sii"
-        Require ($manifest -match 'package_version\s*:\s*"1\.2"') "Manifest package version is not 1.2"
+        Require ($manifest -match 'package_version\s*:\s*"1\.3"') "Manifest package version is not 1.3"
         Require ($manifest -match 'compatible_versions\[\]\s*:\s*"1\.59\.\*"') "Manifest does not declare ETS2 1.59.*"
     }
 

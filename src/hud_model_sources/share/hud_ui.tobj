@@ -1,0 +1,3 @@
+map 2d /vehicle/truck/passenger_hud/share/hud_ui.dds
+addr clamp_to_edge clamp_to_edge
+trilinear

@@ -11,7 +11,7 @@ Features:
 - Navigation map, current speed and speed limit
 - Normal, Large and Extra Large sizes
 - Left-shifted projection and 1024 x 1024 UI rendering
-- Alpha-tested foreground rendering so windshield rain does not blur the HUD
+- Transparent additive rendering, with the HUD surface moved slightly toward the cabin to stay ahead of windshield rain
 
 Load this addon above the supported bus mods. Open the vehicle configurator, select the left-windshield accessory point, and install one Passenger HUD size.
 

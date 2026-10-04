@@ -18,7 +18,7 @@ Global {
 Material {
     Index: 0
     Alias: "mat_0000.002"
-    Effect: "eut2.dif.lum.a"
+    Effect: "eut2.dif.lum.add"
 }
 Piece {
     Index: 0
@@ -29,22 +29,22 @@ Piece {
     Stream {
         Format: FLOAT3
         Tag: "_POSITION"
-        0    ( &4090c927  &c02e8938  &c0eb651f )
-        1    ( &402b2499  &bf996f7f  &c104daa4 )
-        2    ( &402a3b52  &c0314269  &c10310c1 )
-        3    ( &401fa6d1  &c03928db  &c1041b45 )
-        4    ( &3ffbc531  &bf8c2f07  &c10a1155 )
-        5    ( &3ff9ab89  &c039f441  &c10801ac )
-        6    ( &402162d4  &c03b08e1  &c103e051 )
-        7    ( &40951f2f  &c037e95a  &c0e91790 )
-        8    ( &40913dcb  &bf93fd1d  &c0eef8e5 )
-        9    ( &4022788a  &bf86af3c  &c106016b )
-        10   ( &4095aa0a  &bf80702c  &c0ed59c6 )
-        11   ( &3ff621bd  &c03be8c0  &c1082b2f )
-        12   ( &4020b3a4  &bf8a9839  &c1062aee )
-        13   ( &3ff84d29  &bf886ef9  &c10a4c4a )
-        14   ( &3ff99a69  &3d665171  &c10b935a )
-        15   ( &4095fd5a  &3df3158c  &c0efe7e5 )
+        0    ( &40906494  &c02e6793  &c0ea8584 )
+        1    ( &402a5b73  &bf992c34  &c1046ad6 )
+        2    ( &4029722c  &c03120c4  &c102a0f3 )
+        3    ( &401eddab  &c0390736  &c103ab77 )
+        4    ( &3ffa32e5  &bf8bebbc  &c109a187 )
+        5    ( &3ff8193d  &c039d29c  &c10791de )
+        6    ( &402099ae  &c03ae73c  &c1037083 )
+        7    ( &4094ba9c  &c037c7b5  &c0e837f5 )
+        8    ( &4090d938  &bf93b9d2  &c0ee194a )
+        9    ( &4021af64  &bf866bf1  &c105919d )
+        10   ( &40954577  &bf802ce1  &c0ec7a2b )
+        11   ( &3ff48f71  &c03bc71b  &c107bb61 )
+        12   ( &401fea7e  &bf8a54ee  &c105bb20 )
+        13   ( &3ff6badd  &bf882bae  &c109dc7c )
+        14   ( &3ff8081d  &3d6ebad0  &c10b238c )
+        15   ( &409598c7  &3df74a3b  &c0ef084a )
     }
     Stream {
         Format: FLOAT3
