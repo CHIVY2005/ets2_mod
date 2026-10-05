@@ -1,7 +1,7 @@
 SiiNunit
 {
 mod_package : .package_name {
-    package_version: "1.5"
+    package_version: "1.6"
     display_name: "Passenger Bus HUD + Dashboard GPS"
     author: "Xuan25 / Passenger-bus compatibility addon"
     category[]: "ui"
