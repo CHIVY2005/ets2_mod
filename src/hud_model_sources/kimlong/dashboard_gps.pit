@@ -14,13 +14,13 @@ Global {
     LookCount: 1
     VariantCount: 1
     PartCount: 1
-    MaterialCount: 1
+    MaterialCount: 2
 }
 Look {
     Name: "default"
     Material {
-        Alias: "mat_0000.002"
-        Effect: "eut2.dif.lum.add"
+        Alias: "mat_screen"
+        Effect: "eut2.dif.lum"
         Flags: 0
         AttributeCount: 6
         TextureCount: 1
@@ -32,12 +32,12 @@ Look {
         Attribute {
             Format: FLOAT3
             Tag: "specular"
-            Value: ( 0.10000099986791611 0.10000099986791611 0.10000099986791611 )
+            Value: ( 0.05 0.05 0.05 )
         }
         Attribute {
             Format: FLOAT
             Tag: "shininess"
-            Value: ( 40.0 )
+            Value: ( 30.0 )
         }
         Attribute {
             Format: FLOAT
@@ -59,6 +59,42 @@ Look {
             Value: "/vehicle/truck/passenger_hud/share/hud_ui"
         }
     }
+    Material {
+        Alias: "mat_casing"
+        Effect: "eut2.dif.spec"
+        Flags: 0
+        AttributeCount: 5
+        TextureCount: 1
+        Attribute {
+            Format: FLOAT3
+            Tag: "diffuse"
+            Value: ( 0.08 0.08 0.08 )
+        }
+        Attribute {
+            Format: FLOAT3
+            Tag: "specular"
+            Value: ( 0.05 0.05 0.05 )
+        }
+        Attribute {
+            Format: FLOAT
+            Tag: "shininess"
+            Value: ( 25.0 )
+        }
+        Attribute {
+            Format: FLOAT
+            Tag: "add_ambient"
+            Value: ( 0.0 )
+        }
+        Attribute {
+            Format: FLOAT
+            Tag: "reflection"
+            Value: ( 0.0 )
+        }
+        Texture {
+            Tag: "texture[0]:texture_base"
+            Value: "/vehicle/truck/passenger_hud/share/hud_ui"
+        }
+    }
 }
 Variant {
     Name: "default"
@@ -72,4 +108,3 @@ Variant {
         }
     }
 }
-
