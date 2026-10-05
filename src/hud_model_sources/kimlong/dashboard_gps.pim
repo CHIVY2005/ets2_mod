@@ -29,22 +29,22 @@ Piece {
     Stream {
         Format: FLOAT3
         Tag: "_POSITION"
-        0    ( &408c5530  &c075aea2  &c0a35011 )
-        1    ( &406d3de1  &c051d0c2  &c0ae6d75 )
-        2    ( &406ce858  &c076ae44  &c0ad1dac )
-        3    ( &4069073a  &c07993d4  &c0ade11f )
-        4    ( &405ca5ad  &c04f62ce  &c0b2403b )
-        5    ( &405c431c  &c079de69  &c0b0bd48 )
-        6    ( &4069aa08  &c07a43d6  &c0adb5e2 )
-        7    ( &408dec33  &c0791eae  &c0a277e5 )
-        8    ( &408c7ff4  &c050d11f  &c0a49fda )
-        9    ( &406a0fdc  &c04e60b5  &c0af45a0 )
-        10   ( &408e1f1c  &c04d3b8c  &c0a407a3 )
-        11   ( &405b9d0b  &c07a95ed  &c0b0dbb8 )
-        12   ( &406969cc  &c04f1839  &c0af6412 )
-        13   ( &405c02df  &c04eb2cb  &c0b26b76 )
-        14   ( &405c3ff8  &c0345db7  &c0b35b4f )
-        15   ( &408e3da9  &c032e678  &c0a4f77c )
+        0    ( &408c5530  &c00c1509  &c0a35011 )
+        1    ( &406d3de1  &bfd06e51  &c0ae6d75 )
+        2    ( &406ce858  &c00d14ab  &c0ad1dac )
+        3    ( &4069073a  &c00ffa3b  &c0ade11f )
+        4    ( &405ca5ad  &bfcb9269  &c0b2403b )
+        5    ( &405c431c  &c01044d0  &c0b0bd48 )
+        6    ( &4069aa08  &c010aa3d  &c0adb5e2 )
+        7    ( &408dec33  &c00f8515  &c0a277e5 )
+        8    ( &408c7ff4  &bfce6f0b  &c0a49fda )
+        9    ( &406a0fdc  &bfc98e37  &c0af45a0 )
+        10   ( &408e1f1c  &bfc743e5  &c0a407a3 )
+        11   ( &405b9d0b  &c010fc54  &c0b0dbb8 )
+        12   ( &406969cc  &bfcafd3f  &c0af6412 )
+        13   ( &405c02df  &bfca3263  &c0b26b76 )
+        14   ( &405c3ff8  &bf95883b  &c0b35b4f )
+        15   ( &408e3da9  &bf9299bd  &c0a4f77c )
     }
     Stream {
         Format: FLOAT3
